@@ -1,0 +1,66 @@
+// src/components/RightNowLanding.tsx
+import React, { useState } from "react";
+import AnimatedBackground from "./components/AnimatedBackground";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import FeaturesIntro from "./components/FeaturesIntro";
+import FeatureCard from "./components/FeatureCard";
+import AISection from "./components/AISection";
+import DiscoverIntro from "./components/DiscoverIntro";
+import LawyerCard from "./components/LawyerCard";
+import SignInPrompt from "./components/SignInPrompt";
+import PricingIntro from "./components/PricingIntro";
+import PricingCard from "./components/PricingCard";
+import CTASection from "./components/CTASection";
+import Footer from "./components/Footer";
+import LawyerModal from "./components/LawyerModal";
+import { lawyers, features, pricing } from "./data";
+import { type Lawyer } from "./types";
+
+const RightNowLanding: React.FC = () => {
+  const [selectedLawyer, setSelectedLawyer] = useState<Lawyer | null>(null);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50 text-slate-900 antialiased overflow-x-hidden">
+      <AnimatedBackground />
+      <Header />
+
+      <main className="relative container mx-auto px-6">
+        <Hero />
+
+        <section id="features" className="py-20">
+          <FeaturesIntro />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((f, i) => <FeatureCard key={i} {...f} />)}
+          </div>
+        </section>
+
+        <AISection />
+
+        <section id="discover" className="py-20">
+          <DiscoverIntro />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {lawyers.map((lawyer, i) => (
+              <LawyerCard key={i} lawyer={lawyer} onClick={() => setSelectedLawyer(lawyer)} />
+            ))}
+          </div>
+          <SignInPrompt />
+        </section>
+
+        <section id="pricing" className="py-20">
+          <PricingIntro />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {pricing.map((p, i) => <PricingCard key={i} {...p} />)}
+          </div>
+        </section>
+
+        <CTASection />
+        <Footer />
+      </main>
+
+      {selectedLawyer && <LawyerModal lawyer={selectedLawyer} onClose={() => setSelectedLawyer(null)} />}
+    </div>
+  );
+};
+
+export default RightNowLanding;
