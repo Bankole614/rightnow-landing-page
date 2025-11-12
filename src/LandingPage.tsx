@@ -16,6 +16,21 @@ import Footer from "./components/Footer";
 import LawyerModal from "./components/LawyerModal";
 import { lawyers, features, pricing } from "./data";
 import { type Lawyer } from "./types";
+// import { useAuth } from "../hooks/useAuth"; // example
+import { type ActiveCase } from "./types";
+
+// const { user, token } = useAuth();
+// const isAuthenticated = Boolean(user);
+const demoCase: ActiveCase = {
+  title: "Demo: Smith v. Acme Ltd.",
+  nextHearing: "Nov 20, 2025",
+  progressPercent: 65,
+  tasksSummary: "3/8",
+  docsCount: 12,
+  messagesCount: 24,
+  demo: true
+};
+
 
 const RightNowLanding: React.FC = () => {
   const [selectedLawyer, setSelectedLawyer] = useState<Lawyer | null>(null);
@@ -26,7 +41,7 @@ const RightNowLanding: React.FC = () => {
       <Header />
 
       <main className="relative container mx-auto px-6">
-        <Hero />
+        <Hero  activeCase={ demoCase } />
 
         <section id="features" className="py-20">
           <FeaturesIntro />
