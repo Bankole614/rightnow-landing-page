@@ -22,7 +22,7 @@ import { type ActiveCase } from "./types";
 // const { user, token } = useAuth();
 // const isAuthenticated = Boolean(user);
 const demoCase: ActiveCase = {
-  title: "Demo: Smith v. Acme Ltd.",
+  title: "Demo: John v. Nigeria Govt.",
   nextHearing: "Nov 20, 2025",
   progressPercent: 65,
   tasksSummary: "3/8",
@@ -36,7 +36,7 @@ const RightNowLanding: React.FC = () => {
   const [selectedLawyer, setSelectedLawyer] = useState<Lawyer | null>(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50 text-slate-900 antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 via-white to-indigo-50 text-slate-900 antialiased overflow-x-hidden">
       <AnimatedBackground />
       <Header />
 

@@ -8,8 +8,8 @@ const Brand: React.FC = () => (
       <img src={Logo} alt="" />
     </div>
     <div>
-      <h1 className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-cyan-500 bg-clip-text text-transparent">RightNow</h1>
-      <p className="text-xs text-slate-500">Legal clarity, powered by AI</p>
+      <h1 className="text-xl font-bold bg-linear-to-r from-indigo-600 to-cyan-500 bg-clip-text text-transparent">RightNow</h1>
+      <p className="text-xs text-slate-500">Legal clarity</p>
     </div>
   </div>
 );
