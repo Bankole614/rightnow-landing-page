@@ -17,7 +17,7 @@ const LawyerCard: React.FC<Props> = ({ lawyer, onClick }) => {
 
   return (
     <div
-      className="group backdrop-blur-xl bg-white/80 rounded-2xl p-6 shadow-lg ring-1 ring-slate-200/50 hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer"
+      className="group backdrop-blur-xl bg-white/80 rounded-2xl p-6 border border-slate-200 shadow hover:shadow-lg hover:scale-[1.03] transition-all duration-300 cursor-pointer"
       onClick={onClick}
       role="button"
       tabIndex={0}
@@ -25,7 +25,7 @@ const LawyerCard: React.FC<Props> = ({ lawyer, onClick }) => {
     >
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-3">
-          <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${lawyer.color} text-white flex items-center justify-center font-bold text-xl shadow-lg`}>{lawyer.avatar}</div>
+          <div className={`w-14 h-14 rounded-2xl ${lawyer.color} text-white flex items-center justify-center font-bold text-xl shadow-lg`}>{lawyer.avatar}</div>
           <div>
             <div className="font-bold text-lg text-slate-900">{lawyer.name}</div>
             <div className="text-sm text-slate-500">{lawyer.specialty}</div>
@@ -51,7 +51,7 @@ const LawyerCard: React.FC<Props> = ({ lawyer, onClick }) => {
         </div>
       </div>
 
-      <button className="w-full px-4 py-3 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-xl font-semibold shadow-lg group-hover:shadow-xl transition-all">View Full Profile</button>
+      <button className="w-full px-4 py-3 bg-linear-to-r to-[#1D8ADF] from-[#283593] text-white rounded-xl font-semibold shadow-lg group-hover:shadow-xl transition-all">View Full Profile</button>
     </div>
   );
 };

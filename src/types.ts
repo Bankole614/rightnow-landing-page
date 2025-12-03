@@ -22,8 +22,7 @@ export interface ActiveCase {
 export interface Feature {
   title: string;
   desc: string;
-  icon: React.ReactNode;
-  gradient: string;
+  icon: string;
 }
 
 export interface Pricing {

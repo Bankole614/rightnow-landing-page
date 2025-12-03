@@ -39,26 +39,26 @@ const ActiveCaseCard: React.FC<Props> = ({ activeCase }) => {
         </div>
 
         <div className="grid grid-cols-3 gap-4 pt-2">
-          <div className="backdrop-blur-sm bg-[#EDF0FF] p-3 rounded-xl border border-slate-100 text-center">
+          <div className="backdrop-blur-sm bg-blue-50 p-3 rounded-xl border border-slate-100 text-center">
             <div className="flex flex-col items-center gap-0">
-              <ListTodo className="size-8 leading-none" />
+              <ListTodo className="size-8 text-slate-700 leading-none" />
               <div className="text-sm text-slate-500">Tasks</div>
             </div>
-            <div className="text-lg font-bold text-slate-900">{tasksSummary}</div>
+            <div className="text-lg font-bold text-slate-700">{tasksSummary}</div>
           </div>
-          <div className="backdrop-blur-sm bg-[#EDF0FF]  p-3 rounded-xl border border-slate-100 text-center">
+          <div className="backdrop-blur-sm bg-blue-50  p-3 rounded-xl border border-slate-100 text-center">
             <div className="flex flex-col items-center gap-0">
-              <Files className="size-8 leading-none" />
+              <Files className="size-8 text-slate-700 leading-none" />
               <div className="text-sm text-slate-500">Docs</div>
             </div>
-            <div className="text-lg font-bold text-slate-900">{docsCount}</div>
+            <div className="text-lg font-bold text-slate-700">{docsCount}</div>
           </div>
-          <div className="backdrop-blur-sm bg-[#EDF0FF] p-3 rounded-xl border border-slate-100 text-center">
+          <div className="backdrop-blur-sm bg-blue-50 p-3 rounded-xl border border-slate-100 text-center">
             <div className="flex flex-col items-center gap-0">
-              <MessageCircleMore className="size-8 leading-none" />
+              <MessageCircleMore className="size-8 text-slate-700 leading-none" />
               <div className="text-sm text-slate-500">Messages</div>
             </div>
-            <div className="text-lg font-bold text-slate-900">{messagesCount}</div>
+            <div className="text-lg font-bold text-slate-700">{messagesCount}</div>
           </div>
         </div>
 

@@ -37,13 +37,13 @@ const RightNowLanding: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-50 via-white to-indigo-50 text-slate-900 antialiased overflow-x-hidden">
-      <AnimatedBackground />
+      {/* <AnimatedBackground /> */}
       <Header />
 
       <main className="relative mx-auto ">
         <Hero  activeCase={ demoCase } />
 
-        <section id="features" className="py-20">
+        <section id="features" className="py-16  container">
           <FeaturesIntro />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((f, i) => <FeatureCard key={i} {...f} />)}
@@ -52,9 +52,9 @@ const RightNowLanding: React.FC = () => {
 
         <AISection />
 
-        <section id="discover" className="py-20">
+        <section id="discover" className="py-16 container">
           <DiscoverIntro />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {lawyers.map((lawyer, i) => (
               <LawyerCard key={i} lawyer={lawyer} onClick={() => setSelectedLawyer(lawyer)} />
             ))}
