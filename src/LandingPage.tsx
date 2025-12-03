@@ -40,7 +40,7 @@ const RightNowLanding: React.FC = () => {
       <AnimatedBackground />
       <Header />
 
-      <main className="relative container mx-auto px-6">
+      <main className="relative mx-auto ">
         <Hero  activeCase={ demoCase } />
 
         <section id="features" className="py-20">
@@ -62,7 +62,7 @@ const RightNowLanding: React.FC = () => {
           <SignInPrompt />
         </section>
 
-        <section id="pricing" className="py-20">
+        <section id="pricing" className="py-20 bg-blue-100">
           <PricingIntro />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {pricing.map((p, i) => <PricingCard key={i} {...p} />)}
