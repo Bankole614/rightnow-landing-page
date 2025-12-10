@@ -3,8 +3,8 @@ import type { Lawyer, Feature, Pricing } from "./types";
 
 export const lawyers: Lawyer[] = [
   { name: "Aisha Bello", specialty: "Family Law", experience: "8 years", rating: 4.9, cases: 120, avatar: "A", color: "bg-blue-500" },
-  { name: "Marcus Johnson", specialty: "Corporate", experience: "12 years", rating: 4.8, cases: 200, avatar: "M", color: "bg-cyan-500" },
-  { name: "Samira Khan", specialty: "Immigration", experience: "6 years", rating: 5.0, cases: 85, avatar: "S", color: "bg-amber-500" }
+  { name: "Marcus Johnson", specialty: "Corporate", experience: "12 years", rating: 4.8, cases: 200, avatar: "M", color: "bg-amber-500" },
+  { name: "Samira Khan", specialty: "Immigration", experience: "6 years", rating: 5.0, cases: 85, avatar: "S", color: "bg-cyan-500" }
 ];
 
 export const features: Feature[] = [

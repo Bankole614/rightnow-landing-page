@@ -1,5 +1,5 @@
 // src/components/AISection.tsx
-import { Check, Lightbulb, Sparkles } from "lucide-react";
+import { Check, Lightbulb, Sparkles,TriangleAlert } from "lucide-react";
 import React from "react";
 
 const AISection: React.FC = () => {
@@ -14,8 +14,14 @@ const AISection: React.FC = () => {
     <section id="ai" className="py-20">
       <div className="max-w-7xl mx-auto">
         <div className="backdrop-blur-xl bg-linear-to-br from-[#1D8ADF] to-[#283593] rounded-3xl p-12 shadow-2xl relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px'}} />
+          <div className="absolute inset-0 opacity-30">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.5) 1px, transparent 3px)',
+                backgroundSize: '28px 28px'
+              }}
+            />
           </div>
 
           <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -41,7 +47,7 @@ const AISection: React.FC = () => {
               <button className="w-full items-center gap-2 px-8 py-4 bg-white text-primary rounded-xl font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all">Try AI Demo</button>
             </div>
 
-            <div className="backdrop-blur-xl bg-white/95 p-8 rounded-2xl shadow-2xl">
+            <div className="backdrop-blur-xl bg-white/95 lg:p-8 p-4 rounded-2xl shadow-2xl">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-linear-to-br from-[#1D8ADF] to-[#283593] flex items-center justify-center">
                   <Lightbulb className="w-6 h-6 text-white"/>
@@ -53,25 +59,30 @@ const AISection: React.FC = () => {
               </div>
 
               <div className="space-y-4">
-                <div className="flex gap-3">
-                  <div className="w-8 h-8 rounded-full bg-slate-300 flex items-center justify-center shrink-0 font-semibold text-sm">U</div>
+                <div className="flex lg:gap-3 gap-1.5">
                   <div className="flex-1 bg-slate-200 rounded-2xl rounded-tl-sm p-4">
                     <p className="text-sm text-slate-900">What are the main payment terms and deadlines in this contract?</p>
                   </div>
+                  <div className="w-8 h-8 rounded-full bg-slate-300 flex items-center justify-center shrink-0 font-semibold text-sm">U</div>
                 </div>
 
-                <div className="flex gap-3">
-                  <div className="flex-1 bg-gradient-to-br from-white to-indigo-50 border-2 border-indigo-200 rounded-2xl rounded-tl-sm p-4">
+                <div className="flex lg:gap-3 gap-1.5">
+                  <div className="lg:w-8 lg:h-8 w-6 h-6 rounded-full bg-linear-to-br from-[#1D8ADF] to-[#283593] flex items-center justify-center shrink-0">
+                    <Lightbulb className="lg:w-5 lg:h-5 w-4 h-4 text-white" />
+                  </div>
+                  <div className="flex-1 bg-linear-to-br from-white to-indigo-50 border-2 border-indigo-200 rounded-2xl rounded-tl-sm p-4">
                     <p className="text-sm text-slate-900 mb-3">Based on the contract, here are the key payment terms:</p>
                     <ul className="text-sm text-slate-700 space-y-2">
-                      <li className="flex items-start gap-2"><span className="text-indigo-600">•</span><span><strong>Initial payment:</strong> $50,000 due within 30 days of signing</span></li>
-                      <li className="flex items-start gap-2"><span className="text-indigo-600">•</span><span><strong>Milestone payments:</strong> 3 installments of $25,000 each</span></li>
-                      <li className="flex items-start gap-2"><span className="text-indigo-600">•</span><span><strong>Final delivery:</strong> January 15, 2026</span></li>
+                      <li className="flex items-start gap-2"><span className="text-primary">•</span><span><strong>Initial payment:</strong> $50,000 due within 30 days of signing</span></li>
+                      <li className="flex items-start gap-2"><span className="text-primary">•</span><span><strong>Milestone payments:</strong> 3 installments of $25,000 each</span></li>
+                      <li className="flex items-start gap-2"><span className="text-primary">•</span><span><strong>Final delivery:</strong> January 15, 2026</span></li>
                     </ul>
-                    <div className="mt-4 pt-3 border-t border-slate-200"><p className="text-xs text-slate-500 italic">⚠️ This is AI-generated analysis, not legal advice</p></div>
-                  </div>
-                  <div className="w-8 h-8 rounded-full bg-linear-to-br from-[#1D8ADF] to-[#283593] flex items-center justify-center shrink-0">
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                    <div className="mt-4 pt-3 border-t border-slate-200">
+                      <p className="text-xs text-slate-500 italic flex items-center gap-2">
+                        <TriangleAlert className="w-3 h-3 text-slate-500" />
+                        <span>This is AI-generated analysis, not legal advice</span>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

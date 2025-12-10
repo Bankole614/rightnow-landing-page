@@ -4,7 +4,7 @@ import { type Pricing } from "../types";
 import { Check } from "lucide-react";
 
 const PricingCard: React.FC<Pricing> = ({ tier, price, period, features, highlight }) => (
-  <div className={`relative rounded-2xl p-8 transition-all duration-300 ${highlight ? 'bg-linear-to-br from-[#1D8ADF] to-[#283593] text-white shadow-2xl shadow-[#283593]/50 scale-105 ring-4 ring-indigo-200' : 'backdrop-blur-xl bg-white/80 ring-1 ring-slate-200/50 hover:shadow-xl hover:scale-105'}`}>
+  <div className={`relative rounded-2xl mx-4 lg:mx-0 p-8 transition-all duration-300 ${highlight ? 'bg-linear-to-br from-[#1D8ADF] to-[#283593] text-white shadow-2xl shadow-[#283593]/50 scale-105 ring-4 ring-indigo-200' : 'backdrop-blur-xl bg-white/80 ring-1 ring-slate-200/50 hover:shadow-xl hover:scale-105'}`}>
     {highlight && <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-linear-to-r from-amber-400 to-orange-400 text-slate-900 px-4 py-1 rounded-full text-sm font-bold shadow-lg">Most Popular</div>}
 
     <div className={`text-sm font-bold uppercase tracking-wide mb-2 ${highlight ? 'text-indigo-100' : 'text-slate-500'}`}>{tier}</div>
