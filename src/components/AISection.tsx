@@ -1,5 +1,5 @@
 // src/components/AISection.tsx
-import { Check, Lightbulb, Sparkles,TriangleAlert } from "lucide-react";
+import { Lightbulb, Sparkles,TriangleAlert } from "lucide-react";
 import React from "react";
 
 const AISection: React.FC = () => {
