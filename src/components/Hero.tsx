@@ -23,7 +23,7 @@ const Hero: React.FC = ({ activeCase }) => (
       </h2>
 
       <p className="text-lg text-slate-600 max-w-xl leading-relaxed">
-        Transform how you manage cases with AI-powered document analysis, secure client collaboration, and intelligent task tracking—all in one beautiful platform.
+        Transform how you manage cases with AI-powered document analysis, secure client collaboration, and intelligent task tracking. All in one beautiful platform.
       </p>
 
       <div className="max-w-sm">

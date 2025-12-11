@@ -11,7 +11,7 @@ const ActiveCaseCard: React.FC<Props> = ({ activeCase }) => {
   const { title, nextHearing, progressPercent = 0, tasksSummary = "-", docsCount = 0, messagesCount = 0, demo } = activeCase;
 
   return (
-    <div className="relative rounded-3xl backdrop-blur-xl bg-white/80 p-8 shadow-lg ring-1 ring-slate-200/50 transform hover:scale-105 transition-transform duration-500">
+    <div className="relative rounded-3xl backdrop-blur-xl bg-white/80 p-8 shadow-lg ring-1 ring-slate-200/50 transform hover:scale-[1.02] transition-transform duration-500">
       {demo && (
         <div className="absolute -top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800">Demo data</div>
       )}

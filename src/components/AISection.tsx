@@ -11,9 +11,9 @@ const AISection: React.FC = () => {
   ];
 
   return (
-    <section id="ai" className="py-20">
+    <section id="ai" className="py-20 mx-4 lg:mx-0">
       <div className="max-w-7xl mx-auto">
-        <div className="backdrop-blur-xl bg-linear-to-br from-[#1D8ADF] to-[#283593] rounded-3xl p-12 shadow-2xl relative overflow-hidden">
+        <div className="backdrop-blur-xl bg-linear-to-br from-[#1D8ADF] to-[#283593] rounded-3xl p-4 lg:p-8 shadow-xl relative overflow-hidden">
           <div className="absolute inset-0 opacity-30">
             <div
               className="absolute inset-0"
