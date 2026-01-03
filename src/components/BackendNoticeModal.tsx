@@ -49,24 +49,34 @@ const BackendNoticeModal: React.FC<Props> = ({ open, onClose }) => {
           </svg>
         </button>
 
-        <h2 className="text-lg font-semibold text-slate-900 mb-2">
-          App preview — backend not ready
+        <h2 className="text-2xl font-semibold text-slate-900 mb-2">
+          App preview
         </h2>
 
-        <p className="text-sm text-slate-600 mb-4">
-          RightNow is currently a UI-only preview. The backend and download
-          features are not implemented yet, so the app is not functional.
-          Feel free to explore the interface — downloads and live features
+        <p className=" text-slate-600 mb-4">
+          RightNow is currently a UI-only preview. The backend
+        features are not implemented yet, so the app is not functional.
+          Feel free to explore the interface. Live features
           will be enabled once the backend is ready.
         </p>
 
-        <div className="flex justify-end">
-          <button
+        <div className="flex justify-end items-center gap-3">
+          <a
+            href="/downloads/rightnow-preview.zip"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+            className="px-4 py-2 bg-primary text-white rounded-lg shadow-sm hover:brightness-95 transition"
+          >
+            Download App
+          </a>
+
+          {/* <button
             onClick={onClose}
             className="px-4 py-2 bg-primary text-white rounded-lg shadow-sm hover:brightness-95 transition"
           >
             Got it
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
