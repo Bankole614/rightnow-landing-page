@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Brand from "./Brand";
+import BackendNoticeModal from "./BackendNoticeModal";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const navLinks = [
     { href: "#features", label: "Features" },
@@ -42,31 +44,19 @@ const Header: React.FC = () => {
 
           {/* Desktop Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <a
+            {/* <a
               className="px-5 py-2.5 text-sm font-medium rounded-xl border-2 border-primary hover:bg-primary text-primary hover:text-white transition-all"
               href="#"
             >
               Sign in
-            </a>
-            <a
+            </a> */}
+            <button
+              type="button"
+              onClick={() => setIsModalOpen(true)}
               className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-primary text-white text-sm font-semibold rounded-xl shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:scale-105 transition-all"
-              href="#"
             >
-              Get Started
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
-              </svg>
-            </a>
+              Download App
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -116,34 +106,23 @@ const Header: React.FC = () => {
               ))}
             </nav>
             <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-slate-200/50">
-              <a
+              {/* <a
                 className="px-5 py-2.5 text-sm font-medium rounded-xl border-2 border-primary hover:bg-primary text-primary hover:text-white transition-all text-center"
                 href="#"
               >
                 Sign in
-              </a>
-              <a
+              </a> */}
+              <button
+                type="button"
+                onClick={() => setIsModalOpen(true)}
                 className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-primary text-white text-sm font-semibold rounded-xl shadow-lg shadow-indigo-500/30 hover:shadow-xl transition-all"
-                href="#"
               >
-                Get Started
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 7l5 5m0 0l-5 5m5-5H6"
-                  />
-                </svg>
-              </a>
+                Download App
+              </button>
             </div>
           </div>
         )}
+        <BackendNoticeModal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </div>
     </header>
   );
