@@ -1,6 +1,7 @@
 // src/components/LawyerModal.tsx
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { type Lawyer } from "../types";
+import BackendNoticeModal from "./BackendNoticeModal";
 
 interface Props {
   lawyer: Lawyer;
@@ -13,6 +14,8 @@ const LawyerModal: React.FC<Props> = ({ lawyer, onClose }) => {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   if (!lawyer) return null;
 
@@ -65,9 +68,10 @@ const LawyerModal: React.FC<Props> = ({ lawyer, onClose }) => {
               <p className="text-sm text-slate-600">To send messages and book consultations, please sign in or create an account.</p>
             </div>
 
-            <button className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-linear-to-r to-[#1D8ADF] from-[#283593] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all">Download the App</button>
+            <button type="button" onClick={() => setIsModalOpen(true)} className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-linear-to-r to-[#1D8ADF] from-[#283593] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all">Download App</button>
           </div>
         </div>
+        <BackendNoticeModal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </div>
     </div>
   );
