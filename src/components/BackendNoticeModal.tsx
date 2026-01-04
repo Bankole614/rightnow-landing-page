@@ -62,7 +62,7 @@ const BackendNoticeModal: React.FC<Props> = ({ open, onClose }) => {
 
         <div className="flex justify-end items-center gap-3">
           <a
-            href="/downloads/rightnow-preview.zip"
+            href="https://github.com/Bankole614/right-now/releases/latest/download/right-now.apk"
             target="_blank"
             rel="noopener noreferrer"
             download
