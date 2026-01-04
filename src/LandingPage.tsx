@@ -1,6 +1,5 @@
 // src/components/RightNowLanding.tsx
 import React, { useState } from "react";
-import AnimatedBackground from "./components/AnimatedBackground";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import FeaturesIntro from "./components/FeaturesIntro";

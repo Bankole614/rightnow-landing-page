@@ -1,8 +1,10 @@
 // src/components/AISection.tsx
 import { Lightbulb, Sparkles,TriangleAlert } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
+import BackendNoticeModal from "./BackendNoticeModal";
 
 const AISection: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const items = [
     "Instant document summaries in plain language",
     "Extract key dates, parties, and obligations",
@@ -44,7 +46,7 @@ const AISection: React.FC = () => {
                 ))}
               </div>
 
-              <button className="w-full items-center gap-2 px-8 py-4 bg-white text-primary rounded-xl font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all">Try AI Demo</button>
+              <button onClick={() => setIsModalOpen(true)} className="w-full items-center gap-2 px-8 py-4 bg-white text-primary rounded-xl font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all">Try AI Demo</button>
             </div>
 
             <div className="backdrop-blur-xl bg-white/95 lg:p-8 p-4 rounded-2xl shadow-2xl">
@@ -89,6 +91,7 @@ const AISection: React.FC = () => {
             </div>
           </div>
         </div>
+        <BackendNoticeModal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </div> 
     </section>
   );

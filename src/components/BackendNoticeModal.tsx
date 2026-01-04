@@ -66,7 +66,7 @@ const BackendNoticeModal: React.FC<Props> = ({ open, onClose }) => {
             target="_blank"
             rel="noopener noreferrer"
             download
-            className="px-4 py-2 bg-primary text-white rounded-lg shadow-sm hover:brightness-95 transition"
+            className="px-6 py-3 bg-primary font-semibold text-white rounded-lg shadow-sm hover:brightness-95 transition"
           >
             Download App
           </a>

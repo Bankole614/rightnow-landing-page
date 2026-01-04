@@ -14,7 +14,7 @@ const Footer: React.FC = () => (
             { name: 'twitter', icon: Twitter, href: 'https://twitter.com' },
             { name: 'linkedin', icon: Linkedin, href: 'https://linkedin.com' },
             { name: 'github', icon: Github, href: 'https://github.com' }
-          ].map(({ name, icon: Icon, href }) => (
+          ].map(({ name, icon: Icon }) => (
             <button key={name}  className="w-10 h-10 rounded-xl backdrop-blur-sm bg-slate-100 hover:bg-indigo-100 flex items-center justify-center transition-all hover:scale-110">
               <Icon className="w-5 h-5 text-slate-600 hover:text-primary" />
             </button>
