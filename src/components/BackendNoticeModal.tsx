@@ -61,6 +61,12 @@ const BackendNoticeModal: React.FC<Props> = ({ open, onClose }) => {
         </p>
 
         <div className="flex justify-end items-center gap-3">
+          <button
+            disabled
+            className="px-6 py-3 bg-slate-300 font-semibold text-slate-500 rounded-lg shadow-sm opacity-50 cursor-not-allowed"
+          >
+            Download for iOS
+          </button>
           <a
             href="https://github.com/Bankole614/right-now/releases/latest/download/right-now.apk"
             target="_blank"
@@ -68,15 +74,8 @@ const BackendNoticeModal: React.FC<Props> = ({ open, onClose }) => {
             download
             className="px-6 py-3 bg-primary font-semibold text-white rounded-lg shadow-sm hover:brightness-95 transition"
           >
-            Download App
+            Download for Android
           </a>
-
-          {/* <button
-            onClick={onClose}
-            className="px-4 py-2 bg-primary text-white rounded-lg shadow-sm hover:brightness-95 transition"
-          >
-            Got it
-          </button> */}
         </div>
       </div>
     </div>
