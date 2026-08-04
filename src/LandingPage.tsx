@@ -14,14 +14,20 @@ export default function LexFlowLanding() {
   return (
     <div className="lf-root min-h-screen">
       <FontLoader />
-      <Nav />
-      <Hero />
+      <div className="lf-grid-bg">
+        <Nav />
+        <Hero />
+      </div>
       <CapabilityStrip />
       <Features />
       <About />
-      <Pricing />
+      <div className="lf-grid-bg">
+        <Pricing />
+      </div>
       <Testimonials />
-      <FAQ />
+      <div className="lf-grid-bg">
+        <FAQ />
+      </div>
       <CTA />
       <Footer />
     </div>

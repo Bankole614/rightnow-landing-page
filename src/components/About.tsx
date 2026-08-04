@@ -14,13 +14,13 @@ export default function About() {
           </h2>
           <p className="text-sm md:text-base leading-relaxed mb-4" style={{ color: colors.grayMuted }}>
             LexFlow started as a way to stop losing hearing dates in group chats and losing
-            documents in email threads. It's grown into a full record — for solo practitioners
+            documents in email threads. It's grown into a full record; for solo practitioners
             juggling a dozen cases, small firms coordinating across roles, and clients who just
             want a straight answer about where their case stands.
           </p>
           <p className="text-sm md:text-base leading-relaxed" style={{ color: colors.grayMuted }}>
-            Every note, hearing, and filing carries a permission — owner, elevated, read-only,
-            external — so the right people see exactly what they should, and nothing more.
+            Every note, hearing, and filing carries a permission; owner, elevated, read-only,
+            external, so the right people see exactly what they should, and nothing more.
           </p>
           <div className="mt-7 flex items-center gap-2">
             <ShieldCheck size={16} color={colors.blue} />

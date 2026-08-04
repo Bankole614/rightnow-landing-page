@@ -16,7 +16,7 @@ export const FEATURES = [
   {
     icon: FileText,
     title: "Case files, organized",
-    body: "Hearings, notes, and documents live on one timeline — visible to the right people and no one else.",
+    body: "Hearings, notes, and documents live on one timeline, visible to the right people and no one else.",
   },
   {
     icon: Sparkles,
@@ -26,12 +26,12 @@ export const FEATURES = [
   {
     icon: MessagesSquare,
     title: "Messaging built for cases",
-    body: "Threaded conversations, read receipts, and attachments — scoped to the case they belong to.",
+    body: "Threaded conversations, read receipts, and attachments, scoped to the case they belong to.",
   },
   {
     icon: Store,
     title: "Marketplace & payments",
-    body: "Clients post requests, lawyers send proposals, and invoices get paid — Stripe and Paystack, built in.",
+    body: "Clients post requests, lawyers send proposals, and invoices get paid. Stripe and Paystack, built in.",
   },
 ];
 
