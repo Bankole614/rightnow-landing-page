@@ -36,7 +36,7 @@ export default function Hero() {
           className="lf-focus w-full sm:w-auto text-sm font-semibold px-6 py-3 rounded-full border flex items-center justify-center gap-2 hover:bg-white transition-colors"
           style={{ borderColor: colors.ink, color: colors.ink }}
         >
-          See how it works <ArrowRight size={15} />
+          See how it works
         </a>
       </div>
 
