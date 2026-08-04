@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import { colors } from "../theme";
 import CaseMockup from "./CaseMockup";
 
