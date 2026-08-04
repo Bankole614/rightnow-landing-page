@@ -9,7 +9,7 @@ export const colors = {
   goldSoft: "#F6ECD8",
   gray: "#3A4652",
   grayMuted: "#6B7480",
-  line: "#E4DFD3",
+  line: "#eae6e0",
 };
 
 export const fontDisplay = "'Newsreader', serif";
