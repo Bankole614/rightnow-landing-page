@@ -14,7 +14,7 @@ export default function Pricing() {
         </h2>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-5 max-w-2xl">
+      <div className="grid md:grid-cols-2 gap-5 max-w-2xl mx-auto">
         {TIERS.map((tier) => (
           <div
             key={tier.name}
@@ -45,6 +45,9 @@ export default function Pricing() {
               </span>
               <span className="text-sm" style={{ color: colors.grayMuted }}>
                 {tier.period}
+              </span>
+              <span className="text-xs ml-2" style={{ color: colors.grayMuted }}>
+                ({tier.priceUsd})
               </span>
             </div>
             <ul className="space-y-3 mb-7 flex-1">

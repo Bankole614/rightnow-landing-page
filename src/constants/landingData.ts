@@ -39,6 +39,7 @@ export const TIERS = [
   {
     name: "Free",
     price: "₦0",
+    priceUsd: "$0",
     period: "/mo",
     desc: "Full case management to get started.",
     features: [
@@ -52,7 +53,8 @@ export const TIERS = [
   },
   {
     name: "Paid",
-    price: "₦12,000",
+    price: "₦15,000",
+    priceUsd: "~$11",
     period: "/mo",
     desc: "Everything in Free, with room to actually use the AI.",
     features: [
