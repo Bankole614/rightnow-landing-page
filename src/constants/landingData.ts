@@ -37,33 +37,31 @@ export const FEATURES = [
 
 export const TIERS = [
   {
-    name: "Solo",
-    price: "₦15,000",
+    name: "Free",
+    price: "₦0",
     period: "/mo",
-    desc: "For individual practitioners managing their own cases.",
-    features: ["Up to 15 active cases", "AI case Q&A", "Client messaging", "Email support"],
-    highlighted: false,
-  },
-  {
-    name: "Firm",
-    price: "₦45,000",
-    period: "/mo",
-    desc: "For small teams coordinating across roles.",
+    desc: "Full case management to get started.",
     features: [
       "Unlimited cases",
-      "Role-based permissions",
-      "Marketplace listings",
-      "Priority support",
+      "Hearings, notes & documents",
+      "Case messaging",
+      "Marketplace listing",
+      "5 AI summaries or questions/mo",
     ],
-    highlighted: true,
+    highlighted: false,
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    period: "",
-    desc: "For larger firms with custom needs.",
-    features: ["Dedicated onboarding", "Custom integrations", "SLA & audit logs", "Account manager"],
-    highlighted: false,
+    name: "Paid",
+    price: "₦12,000",
+    period: "/mo",
+    desc: "Everything in Free, with room to actually use the AI.",
+    features: [
+      "Everything in Free",
+      "50 AI summaries or questions/mo",
+      "Priority email support",
+      "Early access to new features",
+    ],
+    highlighted: true,
   },
 ];
 

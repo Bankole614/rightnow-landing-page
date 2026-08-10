@@ -14,7 +14,7 @@ export default function Pricing() {
         </h2>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-5">
+      <div className="grid md:grid-cols-2 gap-5 max-w-2xl">
         {TIERS.map((tier) => (
           <div
             key={tier.name}
