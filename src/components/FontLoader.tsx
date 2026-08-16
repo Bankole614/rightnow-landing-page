@@ -9,24 +9,7 @@ export default function FontLoader() {
         font-family: ${fontBody};
         color: ${colors.gray};
         background-color: ${colors.paper};
-      }
-      .lf-grid-bg {
-        position: relative;
-        z-index: 0;
-      }
-      .lf-grid-bg::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        pointer-events: none;
-        background-image: 
-          linear-gradient(to right, ${colors.line} 1px, transparent 1px),
-          linear-gradient(to bottom, ${colors.line} 1px, transparent 1px);
-        background-size: 44px 44px;
-        mask-image: radial-gradient(circle at 50% 50%, black 15%, transparent 75%);
-        -webkit-mask-image: radial-gradient(circle at 50% 50%, black 15%, transparent 75%);
-        opacity: 0.85;
+        background-image: radial-gradient(circle at top, rgba(29, 92, 150, 0.06), transparent 38%);
       }
       .lf-serif { font-family: ${fontDisplay}; }
       .lf-mono { font-family: ${fontMono}; letter-spacing: 0.04em; }
