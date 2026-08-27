@@ -7,7 +7,7 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
   return (
     <header
-      className="sticky top-0 z-50 w-full border-b"
+      className="sticky top-0 z-50 w-full border-b relative"
       style={{ background: "rgba(250,248,243,0.9)", backdropFilter: "blur(8px)", borderColor: colors.line }}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -59,7 +59,14 @@ export default function Nav() {
       </div>
 
       {open && (
-        <div className="md:hidden px-6 pb-6 flex flex-col gap-4 border-t" style={{ borderColor: colors.line }}>
+        <div
+          className="md:hidden absolute top-full left-0 right-0 px-6 pb-6 flex flex-col gap-4 border-t"
+          style={{
+            background: "rgba(250,248,243,0.96)",
+            backdropFilter: "blur(8px)",
+            borderColor: colors.line,
+          }}
+        >
           {NAV_LINKS.map((link) => (
             <a key={link.label} href={link.href} className="text-sm font-medium pt-4" style={{ color: colors.gray }}>
               {link.label}
