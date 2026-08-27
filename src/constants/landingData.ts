@@ -3,6 +3,8 @@ import {
   Sparkles,
   MessagesSquare,
   Store,
+  WalletCards,
+  ClipboardList,
 } from "lucide-react";
 
 export const NAV_LINKS = [
@@ -30,8 +32,18 @@ export const FEATURES = [
   },
   {
     icon: Store,
-    title: "Marketplace & payments",
-    body: "Clients post requests, lawyers send proposals, and invoices get paid. Stripe and Paystack, built in.",
+    title: "Legal marketplace",
+    body: "Lawyers post listings, clients post requests, and both sides can send proposals to find the right fit.",
+  },
+  {
+    icon: WalletCards,
+    title: "Wallet and payments",
+    body: "Lawyers manage funds in their wallet while clients pay securely through Stripe and Paystack.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Audit logs",
+    body: "See who did what and when with a clear record of important case and account activity.",
   },
 ];
 
