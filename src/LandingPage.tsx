@@ -4,8 +4,8 @@ import Hero from "./components/Hero";
 import CapabilityStrip from "./components/CapabilityStrip";
 import Features from "./components/Features";
 import About from "./components/About";
-import Pricing from "./components/Pricing";
-import Testimonials from "./components/Testimonials";
+// import Pricing from "./components/Pricing";
+// import Testimonials from "./components/Testimonials";
 import FAQ from "./components/FAQ";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
@@ -19,8 +19,8 @@ export default function LexFlowLanding() {
       <CapabilityStrip />
       <Features />
       <About />
-      <Pricing />
-      <Testimonials />
+      {/* <Pricing />
+      <Testimonials /> */}
       <FAQ />
       <CTA />
       <Footer />
