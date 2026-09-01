@@ -13,7 +13,7 @@ export default function About() {
             Built for the people actually working the case.
           </h2>
           <p className="text-sm md:text-base leading-relaxed mb-4" style={{ color: colors.grayMuted }}>
-            LexFlow started as a way to stop losing hearing dates in group chats and losing
+            Legitrail started as a way to stop losing hearing dates in group chats and losing
             documents in email threads. It's grown into a full record; for solo practitioners
             juggling a dozen cases, small firms coordinating across roles, and clients who just
             want a straight answer about where their case stands.

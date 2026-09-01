@@ -10,7 +10,7 @@ import FAQ from "./components/FAQ";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 
-export default function LexFlowLanding() {
+export default function LegitrailLanding() {
   return (
     <div className="lf-root min-h-screen">
       <FontLoader />

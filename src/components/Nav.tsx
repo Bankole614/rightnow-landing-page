@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Gavel } from "lucide-react";
 import { colors } from "../theme";
 import { NAV_LINKS } from "../constants/landingData";
 
@@ -16,10 +16,10 @@ export default function Nav() {
             className="w-8 h-8 rounded-md flex items-center justify-center"
             style={{ background: colors.ink }}
           >
-            <span className="lf-serif italic text-white text-lg leading-none">L</span>
+            <Gavel size={16} color={colors.white} />
           </div>
           <span className="lf-serif text-xl font-medium" style={{ color: colors.ink }}>
-            LexFlow
+            Legitrail
           </span>
         </div>
 

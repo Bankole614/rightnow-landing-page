@@ -12,7 +12,7 @@ export default function CTA() {
           Ready to file with confidence?
         </h2>
         <p className="text-sm md:text-base max-w-md mx-auto mb-8" style={{ color: "#B9C6D4" }}>
-          See LexFlow on your own cases — no commitment, just a walkthrough.
+          See Legitrail on your own cases — no commitment, just a walkthrough.
         </p>
         <a
           href="#"
