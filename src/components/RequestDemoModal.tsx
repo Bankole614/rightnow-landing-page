@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { X, CheckCircle2, Loader2, Sparkles } from "lucide-react";
+import { X, CheckCircle2, Loader2 } from "lucide-react";
 import { colors } from "../theme";
 
 interface DemoModalProps {
