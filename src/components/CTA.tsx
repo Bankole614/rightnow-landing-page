@@ -1,7 +1,11 @@
 import { ArrowRight } from "lucide-react";
 import { colors } from "../theme";
 
-export default function CTA() {
+interface CTAProps {
+  onRequestDemo?: () => void;
+}
+
+export default function CTA({ onRequestDemo }: CTAProps) {
   return (
     <section id="demo" className="max-w-6xl mx-auto px-6 pb-20 md:pb-28">
       <div
@@ -14,13 +18,14 @@ export default function CTA() {
         <p className="text-sm md:text-base max-w-md mx-auto mb-8" style={{ color: "#B9C6D4" }}>
           See Legitrail on your own cases — no commitment, just a walkthrough.
         </p>
-        <a
-          href="#"
-          className="lf-focus inline-flex items-center gap-2 text-sm font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-opacity"
+        <button
+          type="button"
+          onClick={onRequestDemo}
+          className="lf-focus inline-flex items-center gap-2 text-sm font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-opacity cursor-pointer"
           style={{ background: colors.white, color: colors.ink }}
         >
           Request a demo <ArrowRight size={15} />
-        </a>
+        </button>
       </div>
     </section>
   );

@@ -3,7 +3,11 @@ import { Menu, X, Gavel } from "lucide-react";
 import { colors } from "../theme";
 import { NAV_LINKS } from "../constants/landingData";
 
-export default function Nav() {
+interface NavProps {
+  onRequestDemo?: () => void;
+}
+
+export default function Nav({ onRequestDemo }: NavProps) {
   const [open, setOpen] = useState(false);
   return (
     <header
@@ -40,13 +44,14 @@ export default function Nav() {
           <a href="#signin" className="lf-focus text-sm font-medium rounded" style={{ color: colors.gray }}>
             Sign in
           </a>
-          <a
-            href="#demo"
-            className="lf-focus text-sm font-semibold px-4 py-2 rounded-full text-white hover:opacity-90 transition-opacity"
+          <button
+            type="button"
+            onClick={onRequestDemo}
+            className="lf-focus text-sm font-semibold px-4 py-2 rounded-full text-white hover:opacity-90 transition-opacity cursor-pointer"
             style={{ background: colors.blue }}
           >
             Request a demo
-          </a>
+          </button>
         </div>
 
         <button
@@ -75,13 +80,17 @@ export default function Nav() {
           <a href="#signin" className="text-sm font-medium" style={{ color: colors.gray }}>
             Sign in
           </a>
-          <a
-            href="#demo"
-            className="text-sm font-semibold px-4 py-2.5 rounded-full text-white text-center"
+          <button
+            type="button"
+            onClick={() => {
+              setOpen(false);
+              onRequestDemo?.();
+            }}
+            className="text-sm font-semibold px-4 py-2.5 rounded-full text-white text-center cursor-pointer"
             style={{ background: colors.blue }}
           >
             Request a demo
-          </a>
+          </button>
         </div>
       )}
     </header>

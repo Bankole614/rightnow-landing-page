@@ -2,7 +2,11 @@ import { Check } from "lucide-react";
 import { colors } from "../theme";
 import { TIERS } from "../constants/landingData";
 
-export default function Pricing() {
+interface PricingProps {
+  onRequestDemo?: () => void;
+}
+
+export default function Pricing({ onRequestDemo }: PricingProps) {
   return (
     <section id="pricing" className="max-w-6xl mx-auto px-6 py-20 md:py-28">
       <div className="max-w-lg mb-14">
@@ -58,9 +62,10 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
-            <a
-              href="#demo"
-              className="lf-focus text-center text-sm font-semibold py-2.5 rounded-full transition-opacity hover:opacity-90"
+            <button
+              type="button"
+              onClick={onRequestDemo}
+              className="lf-focus text-center text-sm font-semibold py-2.5 rounded-full transition-opacity hover:opacity-90 cursor-pointer"
               style={{
                 background: tier.highlighted ? colors.blue : colors.paper,
                 color: tier.highlighted ? colors.white : colors.ink,
@@ -68,7 +73,7 @@ export default function Pricing() {
               }}
             >
               Get started
-            </a>
+            </button>
           </div>
         ))}
       </div>

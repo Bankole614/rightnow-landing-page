@@ -1,7 +1,11 @@
 import { colors } from "../theme";
 import CaseMockup from "./CaseMockup";
 
-export default function Hero() {
+interface HeroProps {
+  onRequestDemo?: () => void;
+}
+
+export default function Hero({ onRequestDemo }: HeroProps) {
   return (
     <section id="product" className="max-w-6xl mx-auto px-6 py-12 text-center">
       <h1
@@ -23,13 +27,14 @@ export default function Hero() {
       </p>
 
       <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a
-          href="#demo"
-          className="lf-focus w-full sm:w-auto text-sm font-semibold px-6 py-3 rounded-full text-white flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+        <button
+          type="button"
+          onClick={onRequestDemo}
+          className="lf-focus w-full sm:w-auto text-sm font-semibold px-6 py-3 rounded-full text-white flex items-center justify-center gap-2 hover:opacity-90 transition-opacity cursor-pointer"
           style={{ background: colors.blue }}
         >
           Request a demo
-        </a>
+        </button>
         <a
           href="#features"
           className="lf-focus w-full sm:w-auto text-sm font-semibold px-6 py-3 rounded-full border flex items-center justify-center gap-2 hover:bg-white transition-colors"

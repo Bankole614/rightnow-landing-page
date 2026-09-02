@@ -1,3 +1,4 @@
+import { useState } from "react";
 import FontLoader from "./components/FontLoader";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
@@ -9,21 +10,32 @@ import About from "./components/About";
 import FAQ from "./components/FAQ";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
+import RequestDemoModal from "./components/RequestDemoModal";
 
 export default function LegitrailLanding() {
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+
+  const openDemoModal = () => setIsDemoModalOpen(true);
+  const closeDemoModal = () => setIsDemoModalOpen(false);
+
   return (
     <div className="lf-root min-h-screen">
       <FontLoader />
-      <Nav />
-      <Hero />
+      <Nav onRequestDemo={openDemoModal} />
+      <Hero onRequestDemo={openDemoModal} />
       <CapabilityStrip />
       <Features />
       <About />
-      {/* <Pricing />
+      {/* <Pricing onRequestDemo={openDemoModal} />
       <Testimonials /> */}
       <FAQ />
-      <CTA />
+      <CTA onRequestDemo={openDemoModal} />
       <Footer />
+
+      <RequestDemoModal
+        isOpen={isDemoModalOpen}
+        onClose={closeDemoModal}
+      />
     </div>
   );
 }
