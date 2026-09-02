@@ -1,11 +1,10 @@
 import './App.css'
-import RightNowLanding from './LandingPage'
+import LegitrailLanding from './LandingPage'
 
 function App() {
-
   return (
     <>
-      <RightNowLanding />
+      <LegitrailLanding />
     </>
   )
 }
