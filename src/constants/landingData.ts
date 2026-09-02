@@ -10,7 +10,7 @@ import {
 export const NAV_LINKS = [
   { label: "Product", href: "#product" },
   { label: "Features", href: "#features" },
-  { label: "Pricing", href: "#pricing" },
+  // { label: "Pricing", href: "#pricing" },
   { label: "About", href: "#about" },
 ];
 
@@ -103,11 +103,11 @@ export const TESTIMONIALS = [
 export const FAQS = [
   {
     q: "Can clients see everything a lawyer sees?",
-    a: "No. Case visibility is role-based — private notes and internal remarks are restricted to owners and legal staff, and clients see only what's marked shared.",
+    a: "No. Case visibility is role-based. Private notes and internal remarks are restricted to owners and legal staff, and clients see only what's marked shared.",
   },
   {
     q: "How does the AI answer questions about my case?",
-    a: "It reads the summarized case record — documents, notes, and hearings you have access to — and answers only from what's actually filed, flagging when something isn't in the record.",
+    a: "It reads the summarized case record. Documents, notes, and hearings you have access to and answers only from what's actually filed, flagging when something isn't in the record.",
   },
   {
     q: "Do you support payments outside Nigeria?",
@@ -115,6 +115,6 @@ export const FAQS = [
   },
   {
     q: "Can I move my existing cases in?",
-    a: "Yes — bring your documents and case details, and our team will help you get set up during onboarding.",
+    a: "Yes, bring your documents and case details, and our team will help you get set up during onboarding.",
   },
 ];

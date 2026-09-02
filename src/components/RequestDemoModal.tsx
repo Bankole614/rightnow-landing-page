@@ -128,14 +128,6 @@ export default function RequestDemoModal({ isOpen, onClose }: DemoModalProps) {
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header decoration */}
-        <div
-          className="h-1.5 w-full"
-          style={{
-            background: `linear-gradient(90deg, ${colors.ink} 0%, ${colors.blue} 50%, ${colors.gold} 100%)`,
-          }}
-        />
-
         {/* Close Button */}
         <button
           onClick={handleClose}
@@ -180,14 +172,14 @@ export default function RequestDemoModal({ isOpen, onClose }: DemoModalProps) {
             </div>
           ) : (
             <div>
-              <div className="flex items-center gap-2 mb-1.5">
+              {/* <div className="flex items-center gap-2 mb-1.5">
                 <span
                   className="inline-flex items-center gap-1 text-[11px] font-semibold lf-mono uppercase px-2 py-0.5 rounded"
                   style={{ background: colors.blueSoft, color: colors.blue }}
                 >
                   <Sparkles size={11} /> 1-on-1 Walkthrough
                 </span>
-              </div>
+              </div> */}
               <h3
                 className="lf-serif text-2xl font-semibold mb-1"
                 style={{ color: colors.ink }}

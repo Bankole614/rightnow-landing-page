@@ -11,17 +11,25 @@ import FAQ from "./components/FAQ";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import RequestDemoModal from "./components/RequestDemoModal";
+import AppComingSoonModal from "./components/AppComingSoonModal";
 
 export default function LegitrailLanding() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const [isAppModalOpen, setIsAppModalOpen] = useState(false);
 
   const openDemoModal = () => setIsDemoModalOpen(true);
   const closeDemoModal = () => setIsDemoModalOpen(false);
 
+  const openAppModal = () => setIsAppModalOpen(true);
+  const closeAppModal = () => setIsAppModalOpen(false);
+
   return (
     <div className="lf-root min-h-screen">
       <FontLoader />
-      <Nav onRequestDemo={openDemoModal} />
+      <Nav
+        onRequestDemo={openDemoModal}
+        onDownloadApp={openAppModal}
+      />
       <Hero onRequestDemo={openDemoModal} />
       <CapabilityStrip />
       <Features />
@@ -35,6 +43,11 @@ export default function LegitrailLanding() {
       <RequestDemoModal
         isOpen={isDemoModalOpen}
         onClose={closeDemoModal}
+      />
+
+      <AppComingSoonModal
+        isOpen={isAppModalOpen}
+        onClose={closeAppModal}
       />
     </div>
   );

@@ -1,13 +1,15 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import { Menu, X, Gavel } from "lucide-react";
 import { colors } from "../theme";
 import { NAV_LINKS } from "../constants/landingData";
 
 interface NavProps {
   onRequestDemo?: () => void;
+  onDownloadApp?: () => void;
 }
 
-export default function Nav({ onRequestDemo }: NavProps) {
+export default function Nav({ onRequestDemo, onDownloadApp }: NavProps) {
   const [open, setOpen] = useState(false);
   return (
     <header
@@ -41,9 +43,14 @@ export default function Nav({ onRequestDemo }: NavProps) {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <a href="#signin" className="lf-focus text-sm font-medium rounded" style={{ color: colors.gray }}>
-            Sign in
-          </a>
+          <button
+            type="button"
+            onClick={onDownloadApp}
+            className="lf-focus text-sm font-semibold px-4 py-2 rounded-full border hover:bg-white transition-colors cursor-pointer"
+            style={{ borderColor: colors.ink, color: colors.ink }}
+          >
+            Download App
+          </button>
           <button
             type="button"
             onClick={onRequestDemo}
@@ -55,7 +62,7 @@ export default function Nav({ onRequestDemo }: NavProps) {
         </div>
 
         <button
-          className="md:hidden lf-focus rounded p-1"
+          className="md:hidden lf-focus rounded p-1 cursor-pointer"
           onClick={() => setOpen(!open)}
           aria-label={open ? "Close menu" : "Open menu"}
         >
@@ -63,35 +70,66 @@ export default function Nav({ onRequestDemo }: NavProps) {
         </button>
       </div>
 
-      {open && (
-        <div
-          className="md:hidden absolute top-full left-0 right-0 px-6 pb-6 flex flex-col gap-4 border-t"
-          style={{
-            background: "rgba(250,248,243,0.96)",
-            backdropFilter: "blur(8px)",
-            borderColor: colors.line,
-          }}
-        >
-          {NAV_LINKS.map((link) => (
-            <a key={link.label} href={link.href} className="text-sm font-medium pt-4" style={{ color: colors.gray }}>
-              {link.label}
-            </a>
-          ))}
-          <a href="#signin" className="text-sm font-medium" style={{ color: colors.gray }}>
-            Sign in
-          </a>
-          <button
-            type="button"
-            onClick={() => {
-              setOpen(false);
-              onRequestDemo?.();
+      {open && typeof document !== "undefined" && createPortal(
+        <div className="md:hidden">
+          {/* Full Screen Dark Backdrop Overlay */}
+          <div
+            className="fixed inset-0 w-full h-full z-40 transition-opacity duration-200"
+            style={{
+              backgroundColor: "rgba(0, 0, 0, 0.75)",
+              backdropFilter: "blur(4px)",
             }}
-            className="text-sm font-semibold px-4 py-2.5 rounded-full text-white text-center cursor-pointer"
-            style={{ background: colors.blue }}
+            onClick={() => setOpen(false)}
+            aria-hidden="true"
+          />
+
+          {/* Mobile Menu Panel */}
+          <div
+            className="fixed top-16 left-0 right-0 z-50 px-6 pb-6 pt-3 flex flex-col gap-4 border-b shadow-2xl animate-in slide-in-from-top-2 duration-200"
+            style={{
+              background: "rgba(250,248,243,0.98)",
+              backdropFilter: "blur(12px)",
+              borderColor: colors.line,
+            }}
           >
-            Request a demo
-          </button>
-        </div>
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="text-sm font-medium py-1.5 hover:opacity-70 transition-opacity"
+                style={{ color: colors.gray }}
+              >
+                {link.label}
+              </a>
+            ))}
+            <div className="pt-2 flex flex-col gap-2.5">
+              <button
+                type="button"
+                onClick={() => {
+                  setOpen(false);
+                  onDownloadApp?.();
+                }}
+                className="lf-focus text-sm font-semibold px-4 py-2.5 rounded-full border text-center hover:bg-white transition-colors cursor-pointer"
+                style={{ borderColor: colors.ink, color: colors.ink }}
+              >
+                Download App
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setOpen(false);
+                  onRequestDemo?.();
+                }}
+                className="text-sm font-semibold px-4 py-2.5 rounded-full text-white text-center cursor-pointer shadow-sm"
+                style={{ background: colors.blue }}
+              >
+                Request a demo
+              </button>
+            </div>
+          </div>
+        </div>,
+        document.body
       )}
     </header>
   );
