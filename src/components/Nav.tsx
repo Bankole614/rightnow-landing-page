@@ -1,23 +1,20 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
-import { Menu, X, Gavel } from "lucide-react";
+import { Menu, X, Gavel, ArrowRight } from "lucide-react";
 import { colors } from "../theme";
 import { NAV_LINKS } from "../constants/landingData";
 
-interface NavProps {
-  onRequestDemo?: () => void;
-  onDownloadApp?: () => void;
-}
+const WEB_APP_URL = "https://legitrail-app.bankole.xyz/";
 
-export default function Nav({ onRequestDemo, onDownloadApp }: NavProps) {
+export default function Nav() {
   const [open, setOpen] = useState(false);
   return (
     <header
       className="sticky top-0 z-50 w-full border-b relative"
       style={{ background: "rgba(250,248,243,0.9)", backdropFilter: "blur(8px)", borderColor: colors.line }}
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+      <div className="max-w-6xl mx-auto px-6 h-16 relative flex items-center justify-between">
+        <a href="#product" className="flex items-center gap-2">
           <div
             className="w-8 h-8 rounded-md flex items-center justify-center"
             style={{ background: colors.ink }}
@@ -27,9 +24,9 @@ export default function Nav({ onRequestDemo, onDownloadApp }: NavProps) {
           <span className="lf-serif text-xl font-medium" style={{ color: colors.ink }}>
             Legitrail
           </span>
-        </div>
+        </a>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
@@ -42,23 +39,15 @@ export default function Nav({ onRequestDemo, onDownloadApp }: NavProps) {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
-          <button
-            type="button"
-            onClick={onDownloadApp}
-            className="lf-focus text-sm font-semibold px-4 py-2 rounded-full border hover:bg-white transition-colors cursor-pointer"
-            style={{ borderColor: colors.ink, color: colors.ink }}
-          >
-            Download App
-          </button>
-          <button
-            type="button"
-            onClick={onRequestDemo}
-            className="lf-focus text-sm font-semibold px-4 py-2 rounded-full text-white hover:opacity-90 transition-opacity cursor-pointer"
+        <div className="hidden md:flex items-center">
+          <a
+            href={WEB_APP_URL}
+            className="lf-focus inline-flex items-center gap-1.5 text-sm font-semibold px-5 py-2 rounded-full text-white hover:opacity-90 transition-opacity cursor-pointer"
             style={{ background: colors.blue }}
           >
-            Request a demo
-          </button>
+            Open Web App
+            <ArrowRight size={14} />
+          </a>
         </div>
 
         <button
@@ -104,28 +93,15 @@ export default function Nav({ onRequestDemo, onDownloadApp }: NavProps) {
               </a>
             ))}
             <div className="pt-2 flex flex-col gap-2.5">
-              <button
-                type="button"
-                onClick={() => {
-                  setOpen(false);
-                  onDownloadApp?.();
-                }}
-                className="lf-focus text-sm font-semibold px-4 py-2.5 rounded-full border text-center hover:bg-white transition-colors cursor-pointer"
-                style={{ borderColor: colors.ink, color: colors.ink }}
-              >
-                Download App
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setOpen(false);
-                  onRequestDemo?.();
-                }}
-                className="text-sm font-semibold px-4 py-2.5 rounded-full text-white text-center cursor-pointer shadow-sm"
+              <a
+                href={WEB_APP_URL}
+                onClick={() => setOpen(false)}
+                className="inline-flex items-center justify-center gap-1.5 text-sm font-semibold px-4 py-2.5 rounded-full text-white text-center cursor-pointer shadow-sm hover:opacity-90 transition-opacity"
                 style={{ background: colors.blue }}
               >
-                Request a demo
-              </button>
+                Open Web App
+                <ArrowRight size={14} />
+              </a>
             </div>
           </div>
         </div>,

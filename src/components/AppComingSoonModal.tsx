@@ -83,18 +83,27 @@ export default function AppComingSoonModal({
           className="text-xs sm:text-sm leading-relaxed mb-6"
           style={{ color: colors.grayMuted }}
         >
-          We're putting the finishing touches on the Legitrail mobile app for iOS and Android. You'll soon be able to manage cases and review hearing notes on the go.
+          We're putting the finishing touches on the Legitrail mobile app for iOS and Android. In the meantime, you can use the full web app and add it to your home screen.
         </p>
 
-        {/* Button */}
-        <button
-          type="button"
-          onClick={onClose}
-          className="lf-focus w-full py-2.5 rounded-full text-xs font-semibold text-white transition-opacity hover:opacity-90 shadow-sm cursor-pointer"
-          style={{ background: colors.blue }}
-        >
-          Got it
-        </button>
+        {/* Actions */}
+        <div className="flex flex-col gap-2">
+          <a
+            href="https://legitrail-app.bankole.xyz/"
+            className="lf-focus w-full py-2.5 rounded-full text-xs font-semibold text-white transition-opacity hover:opacity-90 shadow-sm cursor-pointer inline-block"
+            style={{ background: colors.blue }}
+          >
+            Open Web App →
+          </a>
+          <button
+            type="button"
+            onClick={onClose}
+            className="lf-focus w-full py-2 rounded-full text-xs font-medium hover:opacity-70 transition-opacity cursor-pointer"
+            style={{ color: colors.grayMuted }}
+          >
+            Close
+          </button>
+        </div>
       </div>
     </div>
   );
